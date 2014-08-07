@@ -1,17 +1,13 @@
-<h1> Your search for <%= movie.title %> was successful!</h1>
+<h1> Your search for: <%= @query %></h1>
 
 <table>
-<% @search do |s| %>
+<% @search.each do |m| %>
   <tr>
-    <% s.movie.title %>
-    <% s.movie.tagline %>
-    <% s.movie.id %>
-    <% s.movie.release_date %>
-    <% s.movie.runtime %>
-    <% s.movie.popularity %>
-    <% s.movie.genres %>
-    <% s.movie.imdb_id %>
+    <td><%= m.title %></td>
+    <td><%= m.release_date %></td>
   </tr>
-  <% end %>
+<% end %>
+
 </table>
   
+
